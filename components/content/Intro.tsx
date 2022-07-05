@@ -11,7 +11,7 @@ export const Intro : React.FC = ({ }) => {
       </div>
       <h1>hi, I&apos;m <span className='name'>andromeda</span>.</h1>
       <div className='intro__description'>
-        I'm a <b>computer engineering</b> student from Hungary.
+        I&apos;m a <b>computer engineering</b> student from Hungary.
         I have profound interest in front-end development, computer graphics and much more.
       </div>
       <div className='intro__bg__webgl'>

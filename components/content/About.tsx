@@ -22,7 +22,7 @@ export const About : React.FC = ({ }) => {
           listening to music and exploring technologies related to web development and computer graphics.
         </div>
         <div>
-          Here are some of the technologies I'm interested in and work with:
+          Here are some of the technologies I&apos;m interested in and work with:
           <ul className='section__tech'>
             {
               technologies.map((e: Tech, i: number) => (
