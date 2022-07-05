@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { capitalize } from '../../util/functions';
 
 interface Props {
   href: string;
