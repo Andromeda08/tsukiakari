@@ -1,0 +1,104 @@
+@import '../theme';
+
+// Section - Intro
+.section__intro {
+  position: relative;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 1rem;
+  padding: 0 15vw;
+
+  color: map-get($clr-bg, 100);
+
+  z-index: 3;
+
+  .name {
+    color: map-get($options, accent);
+  }
+
+  .intro__description {
+    color: map-get($clr-bg, 300);
+    max-width: 55%;
+    line-height: 1.75;
+  }
+  
+  .intro__bg__webgl {
+    position: absolute;
+    top:   calc(map-get($options, canvasSize) / -2);
+    right: calc(map-get($options, canvasSize) / -2);
+
+    width:  map-get($options, canvasSize);
+    height: map-get($options, canvasSize);
+
+    z-index: 1;
+  }
+}
+
+// Section - About
+.section__about,
+.section__projects {
+  display: grid;
+  grid-template-rows: 3rem auto;
+  grid-template-areas: 'header' 'content';
+  padding: 5vh 15vw;
+  gap: 4vh;
+
+  .section__header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    color: map-get($clr-bg, 100);
+    font-weight: 600;
+    padding-bottom: 2vh;
+    border-bottom: 1px solid map-get($clr-bg, 700);
+  }
+
+  .section__content {
+    grid-area: content;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    color: map-get($clr-bg, 200);
+  }
+
+  .section__project__list {
+    grid-area: content;
+    line-height: 1.5;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: 2vh;
+    color: map-get($clr-bg, 200);
+  }
+
+  .section__tech {
+    padding-top: 1.5vh;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    gap: 0.25rem;
+  
+    li {
+      position: relative;
+      padding-left: 20px;
+
+      @each $name, $color in $brand-colors {
+        &.#{$name}::before {
+          color: $color;
+        }
+      }
+
+      &::before {
+        content: "• ";
+        color: map-get($options, accent);
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}

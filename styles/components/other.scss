@@ -1,0 +1,33 @@
+@import '../theme';
+
+.avatar__container {
+  width:  9rem;
+  height: 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: circle();
+  background: map-get($options, accent);
+  
+  img {
+    width:  8.75rem;
+    height: 8.75rem;
+    clip-path: circle();
+  }
+}
+
+.badge {
+  position: relative;
+  padding: 0.125rem 0.65rem;
+
+  background: map-get($options, background);
+
+  border-radius: 32px;
+  font-size: 0.9rem;
+  
+  @each $name, $color in $brand-colors {
+    &--#{$name} {
+      color: $color;
+    }
+  }
+}

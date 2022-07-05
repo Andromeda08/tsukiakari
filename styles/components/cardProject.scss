@@ -1,0 +1,68 @@
+@import '../theme';
+
+.card__project {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 54px auto;
+  grid-template-areas: 'header' 'content';
+  gap: 3vh;
+  background: map-get($clr-bg, 800);
+  padding: 2rem;
+  border-radius: 8px;
+
+  .card__project__header {
+    grid-area: header;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+
+    h4 {
+      color: map-get($clr-bg, 100);
+      font-weight: 600;
+    }
+
+    i {
+      color: map-get($options, accent);
+    }
+
+    .image {
+      width: 54px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      clip-path: circle();
+      background: map-get($options, accent);
+
+      img {
+        width: 95%;
+        height: 95%;
+        clip-path: circle();
+      }
+    }
+  }
+
+  .card__project__content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+
+    .badges {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      
+      a {
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 125ms;
+      }
+      a:hover {
+        color: map-get($options, accent);
+      }
+    }
+  }
+}

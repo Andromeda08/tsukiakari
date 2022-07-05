@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+@import '_reset';
+@import '_theme';
+@import '_base';
+
+@import './components/navigation';
+@import './components/sections';
+@import './components/cardProject';
+@import './components/footer';
+@import './components/other';
+
+// Media rules
+@media only screen and (max-width: map-get($options, brLG)) {
+  .section__projects {
+    .section__project__list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(350px, 1fr));
+    }
+  }
+}
+
+@media only screen and (max-width: map-get($options, brMD)) {
+  .section__intro {
+    padding: 0 8vw;
+
+    .intro__description {
+      max-width: 80%;
+    }
+  }
+
+  .section__about,
+  .section__projects {
+    padding: 5vh 8vw;
+  }
+
+  .section__intro .intro__bg__webgl {
+    top:   calc(map-get($options, canvasSizeMD) / -2);
+    right: calc(map-get($options, canvasSizeMD) / -2);
+
+    width:  map-get($options, canvasSizeMD);
+    height: map-get($options, canvasSizeMD);
+  }
+}
+
+@media only screen and (max-width: map-get($options, brSM)) {
+  .section__intro {
+    padding: 0 5vw;
+
+    .intro__description {
+      max-width: 100%;
+    }
+  }
+
+  .section__about,
+  .section__projects {
+    padding: 5vh 5vw;
+
+    .section__project__list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5vh;
+    }
+  }
+
+  .section__intro .intro__bg__webgl {
+    top:   calc(map-get($options, canvasSizeSM) / -2);
+    right: calc(map-get($options, canvasSizeSM) / -2);
+
+    width:  map-get($options, canvasSizeSM);
+    height: map-get($options, canvasSizeSM);
+  }
+}

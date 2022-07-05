@@ -1,0 +1,40 @@
+@import '../theme';
+
+.footer {
+  width: 100%;
+  padding: 2.5vh 0 5vh 0;
+
+  display: flex;
+  justify-content: center;
+  gap: 1vw;
+
+  color: map-get($clr-bg, 700);
+
+  .links {
+    display: flex;
+    gap: 16px;
+
+    .github {
+      cursor: pointer;
+      transition: color 0.15s ease;
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    .discord {
+      cursor: pointer;
+      transition: color 0.15s ease;
+
+      span {
+        margin-left: 0.25rem;
+        font-size: 0.85rem;
+      }
+
+      &:hover {
+        color: #5865F2;
+      }
+    }
+  }
+}
